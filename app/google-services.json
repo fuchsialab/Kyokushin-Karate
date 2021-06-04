@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "575142059348",
+    "firebase_url": "https://karate-subhas-sir-default-rtdb.firebaseio.com",
+    "project_id": "karate-subhas-sir",
+    "storage_bucket": "karate-subhas-sir.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:575142059348:android:299359564a1efa576ffcc1",
+        "android_client_info": {
+          "package_name": "com.fuchsia.karatesubhasmitra"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "575142059348-mbpbbsdfqct7am9a4ojcohp0rrjie3c2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fuchsia.karatesubhasmitra",
+            "certificate_hash": "c4744223119835ee353ba1cdca2da5aa2da2292a"
+          }
+        },
+        {
+          "client_id": "575142059348-v9tv1e1kq1r58l1oh5hppir85s359j36.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmSLBnfyYIl6yJuvR9txO8YxgCLLmzMYc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "575142059348-v9tv1e1kq1r58l1oh5hppir85s359j36.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

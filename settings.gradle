@@ -1,0 +1,2 @@
+rootProject.name = "Karate By Shihan Subhas Mitra"
+include ':app'
