@@ -1,4 +1,4 @@
-package com.fuchsia.karatesubhasmitra;
+package com.fuchsia.kyokushinkarate;
 
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -14,14 +14,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class SteppingAdapter extends FirebaseRecyclerAdapter<SteppingModel, SteppingAdapter.myviewholder> {
 
-    public SteppingAdapter(FirebaseRecyclerOptions<SteppingModel> options) {
+public class whiteadapter extends FirebaseRecyclerAdapter <whitemodel, whiteadapter.myviewholder>{
+
+    public whiteadapter(FirebaseRecyclerOptions<whitemodel> options) {
         super(options);
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull final SteppingModel model) {
+    protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull final whitemodel model) {
 
         holder.textView.setText(model.getName());
 
@@ -34,6 +35,8 @@ public class SteppingAdapter extends FirebaseRecyclerAdapter<SteppingModel, Step
                 intent.putExtra("nam", model.getURL());
                 activity.startActivity(intent);
 
+                KataTechnic a = KataTechnic.getInstance();
+                a.showInterstitial();
             }
 
         });
@@ -64,4 +67,3 @@ public class SteppingAdapter extends FirebaseRecyclerAdapter<SteppingModel, Step
         }
     }
 }
-

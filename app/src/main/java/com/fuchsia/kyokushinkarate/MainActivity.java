@@ -1,4 +1,4 @@
-package com.fuchsia.karatesubhasmitra;
+package com.fuchsia.kyokushinkarate;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -20,8 +20,15 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdSize;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.interstitial.InterstitialAd;
+import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
@@ -38,8 +45,9 @@ public class MainActivity extends AppCompatActivity implements UpdateHelper.OnUp
     ActionBarDrawerToggle toggle;
     DrawerLayout drawerLayout;
     Toolbar toolbar;
+    private AdView mAdView;
 
-    CardView basic, stepping, kata, kumite;
+    CardView white, orange, blue, yellow, green, brown, black;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,44 +58,92 @@ public class MainActivity extends AppCompatActivity implements UpdateHelper.OnUp
                 .onUpdateCheck(this)
                 .check();
 
+        bannerAds();
+
         mAuth=FirebaseAuth.getInstance();
         mDatabase= FirebaseDatabase.getInstance().getReference();
 
-        basic = findViewById(R.id.basic);
-        stepping = findViewById(R.id.stepping);
-        kata = findViewById(R.id.kata);
-        kumite = findViewById(R.id.kumite);
+        white = findViewById(R.id.white);
+        orange = findViewById(R.id.orange);
+        blue = findViewById(R.id.blue);
+        yellow = findViewById(R.id.yellow);
+        green = findViewById(R.id.green);
+        brown = findViewById(R.id.brown);
+        black = findViewById(R.id.black);
 
-        basic.setOnClickListener(new View.OnClickListener() {
+        white.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, Basic_Warmup.class));
+            public void onClick(View view) {
+
+                String text = "white";
+                Intent myIntent = new Intent(view.getContext(),KataTechnic.class);
+                myIntent.putExtra("belt",text);
+                startActivity(myIntent);
 
             }
         });
-
-        stepping.setOnClickListener(new View.OnClickListener() {
+        orange.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MainActivity.this, Stepping.class));
+            public void onClick(View view) {
+
+                String text = "orange";
+                Intent myIntent = new Intent(view.getContext(),KataTechnic.class);
+                myIntent.putExtra("belt",text);
+                startActivity(myIntent);
 
             }
         });
-
-        kata.setOnClickListener(new View.OnClickListener() {
+        blue.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
 
-                startActivity(new Intent(MainActivity.this, KataTechnic.class));
+                String text = "blue";
+                Intent myIntent = new Intent(view.getContext(),KataTechnic.class);
+                myIntent.putExtra("belt",text);
+                startActivity(myIntent);
 
             }
         });
-
-        kumite.setOnClickListener(new View.OnClickListener() {
+        yellow.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
+            public void onClick(View view) {
 
-                startActivity(new Intent(MainActivity.this, KumiteTechnic.class));
+                String text = "yellow";
+                Intent myIntent = new Intent(view.getContext(),KataTechnic.class);
+                myIntent.putExtra("belt",text);
+                startActivity(myIntent);
+
+            }
+        });
+        green.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String text = "green";
+                Intent myIntent = new Intent(view.getContext(),KataTechnic.class);
+                myIntent.putExtra("belt",text);
+                startActivity(myIntent);
+
+            }
+        });
+        brown.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String text = "brown";
+                Intent myIntent = new Intent(view.getContext(),KataTechnic.class);
+                myIntent.putExtra("belt",text);
+                startActivity(myIntent);
+            }
+        });
+        black.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                String text = "black";
+                Intent myIntent = new Intent(view.getContext(),KataTechnic.class);
+                myIntent.putExtra("belt",text);
+                startActivity(myIntent);
             }
         });
 
@@ -142,45 +198,14 @@ public class MainActivity extends AppCompatActivity implements UpdateHelper.OnUp
 
                         Intent sharingIntent = new Intent(android.content.Intent.ACTION_SEND);
                         sharingIntent.setType("text/plain");
-                        String shareBody = "Download Karate By Shihan Subhas Mitra.  https://play.google.com/store/apps/details?id=com.fuchsia.karatesubhasmitra";
-                        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Karate Online");
+                        String shareBody = "Download Kyokushin Karate App.  https://play.google.com/store/apps/details?id=com.fuchsia.kyokushinkarate";
+                        sharingIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Kyokushin Karate App");
                         sharingIntent.putExtra(android.content.Intent.EXTRA_TEXT, shareBody);
                         startActivity(Intent.createChooser(sharingIntent, "Share via"));
                         drawerLayout.closeDrawer(GravityCompat.START);
 
                         return true;
 
-                    case R.id.logout:
-
-                        new android.app.AlertDialog.Builder(MainActivity.this)
-                                .setTitle("Log Out")
-                                .setMessage("Are you sure to log out?")
-                                .setPositiveButton("Yes", new DialogInterface.OnClickListener()
-                                {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-
-                                        SharedPreferences preferences =getSharedPreferences("sharedPrefs", Context.MODE_PRIVATE);
-                                        SharedPreferences.Editor editor = preferences.edit();
-                                        editor.clear();
-                                        editor.apply();
-
-                                        Intent intent = new Intent(MainActivity.this,LogIn.class);
-                                        startActivity(intent);
-
-                                        Toast.makeText(MainActivity.this, "Successfully Logged Out", Toast.LENGTH_SHORT).show();
-
-                                        finish();
-
-                                    }
-                                })
-                                .setNegativeButton("Cancel", null)
-                                .show();
-
-
-
-
-                        return true;
 
                     case R.id.menuexit:
 
@@ -213,6 +238,21 @@ public class MainActivity extends AppCompatActivity implements UpdateHelper.OnUp
         AppRate.showRateDialogIfMeetsConditions(this);
 
 
+
+
+    }
+
+    public void bannerAds(){
+
+        View view= findViewById(R.id.bannerad);
+        mAdView=new AdView(MainActivity.this);
+        ((RelativeLayout)view).addView(mAdView);
+        mAdView.setAdSize(AdSize.BANNER);
+        mAdView.setAdUnitId(getResources().getString(R.string.bannerid));
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
+        //MediationTestSuite.launch(basicKarate.this);
 
 
     }

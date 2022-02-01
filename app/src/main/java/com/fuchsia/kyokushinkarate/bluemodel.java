@@ -1,14 +1,15 @@
-package com.fuchsia.karatesubhasmitra;
+package com.fuchsia.kyokushinkarate;
 
-public class katamodel {
+public class bluemodel {
+
     String Name,URL;
 
-    katamodel()
+    bluemodel()
     {
 
     }
 
-    public katamodel(String Name, String URL) {
+    public bluemodel(String Name, String URL) {
         this.Name = Name;
         this.URL = URL;
 
@@ -30,5 +31,4 @@ public class katamodel {
     public void setURL(String URL) {
         this.URL = URL;
     }
-
 }

@@ -42,6 +42,43 @@
           ]
         }
       }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:575142059348:android:783ed019d6531a636ffcc1",
+        "android_client_info": {
+          "package_name": "com.fuchsia.kyokushinkarate"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "575142059348-l5rrtdvshqm0bb6h8gg8hai4ijb451q5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fuchsia.kyokushinkarate",
+            "certificate_hash": "c4744223119835ee353ba1cdca2da5aa2da2292a"
+          }
+        },
+        {
+          "client_id": "575142059348-v9tv1e1kq1r58l1oh5hppir85s359j36.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBmSLBnfyYIl6yJuvR9txO8YxgCLLmzMYc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "575142059348-v9tv1e1kq1r58l1oh5hppir85s359j36.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
     }
   ],
   "configuration_version": "1"

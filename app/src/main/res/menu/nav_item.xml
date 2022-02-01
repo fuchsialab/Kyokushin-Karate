@@ -22,9 +22,6 @@
         android:icon="@drawable/ic_baseline_star_border_24"
         android:title="Rate App"/>
 
-    <item android:id="@+id/logout"
-        android:icon="@drawable/logout"
-        android:title="Log Out"/>
 
     <item android:id="@+id/menuexit"
         android:icon="@drawable/ic_baseline_exit_to_app_24"

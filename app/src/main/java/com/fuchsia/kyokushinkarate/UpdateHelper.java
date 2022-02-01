@@ -1,4 +1,4 @@
-package com.fuchsia.karatesubhasmitra;
+package com.fuchsia.kyokushinkarate;
 
 import android.content.Context;
 import android.content.pm.PackageManager;
@@ -9,8 +9,8 @@ import com.google.firebase.remoteconfig.FirebaseRemoteConfig;
 public class UpdateHelper {
 
     public static String KEY_UPDATE_ENABLE="is_update";
-    public static String KEY_UPDATE_VERSION="version";
-    public static String KEY_UPDATE_URL="update_url";
+    public static String KEY_UPDATE_VERSION="versionkyukusin";
+    public static String KEY_UPDATE_URL="update_urlk";
 
     public interface OnUpdateCheckListener{
         void onUpdateCheckListener(String urlApp);

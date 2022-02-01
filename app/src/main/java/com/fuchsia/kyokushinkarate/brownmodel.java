@@ -1,15 +1,15 @@
-package com.fuchsia.karatesubhasmitra;
+package com.fuchsia.kyokushinkarate;
 
-public class KumiteModel {
+public class brownmodel {
 
     String Name,URL;
 
-    KumiteModel()
+    brownmodel()
     {
 
     }
 
-    public KumiteModel(String Name, String URL) {
+    public brownmodel(String Name, String URL) {
         this.Name = Name;
         this.URL = URL;
 
@@ -31,5 +31,4 @@ public class KumiteModel {
     public void setURL(String URL) {
         this.URL = URL;
     }
-
 }

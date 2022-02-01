@@ -1,9 +1,12 @@
 <resources>
-    <string name="app_name">Karate Online</string>
+    <string name="app_name">Kyokushin Karate</string>
     <string name="Open">Open</string>
     <string name="Close">Close</string>
     <string name="lkmkm">https://fuchsialabstore.blogspot.com/p/privacy-policy.html</string>
-    <string name="jjjj">https://play.google.com/store/apps/details?id=com.fuchsia.karatesubhasmitra</string>
+    <string name="jjjj">https://play.google.com/store/apps/details?id=com.fuchsia.kyokushinkarate</string>
+
+    <string name="bannerid">ca-app-pub-8700099206862921/4266028000</string>
+    <string name="interstitialId">ca-app-pub-8700099206862921/1639864665</string>
 
 
 </resources>

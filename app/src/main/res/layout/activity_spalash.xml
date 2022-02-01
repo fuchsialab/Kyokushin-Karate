@@ -9,23 +9,23 @@
     tools:context=".SplashActivity">
 
     <RelativeLayout
-        android:background="@drawable/back"
         android:layout_width="match_parent"
-        android:layout_height="850dp">
+        android:layout_height="850dp"
+        android:background="@drawable/back">
 
 
     </RelativeLayout>
 
     <TextView
-        android:layout_above="@+id/logo"
         android:id="@+id/imgv"
-        android:textStyle="bold"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/logo"
+        android:layout_centerHorizontal="true"
+        android:text="Kyokushin Karate"
         android:textColor="#ffffff"
         android:textSize="25sp"
-        android:layout_centerHorizontal="true"
-        android:text="Learn Karate Online"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
+        android:textStyle="bold" />
 
 
     <ImageView

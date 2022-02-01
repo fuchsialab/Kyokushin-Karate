@@ -1,4 +1,4 @@
-package com.fuchsia.karatesubhasmitra;
+package com.fuchsia.kyokushinkarate;
 
 import org.junit.Test;
 

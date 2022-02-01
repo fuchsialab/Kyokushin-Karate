@@ -1,16 +1,15 @@
-package com.fuchsia.karatesubhasmitra;
+package com.fuchsia.kyokushinkarate;
 
-
-public class SteppingModel {
+public class blackmodel {
 
     String Name,URL;
 
-    SteppingModel()
+    blackmodel()
     {
 
     }
 
-    public SteppingModel(String Name, String URL) {
+    public blackmodel(String Name, String URL) {
         this.Name = Name;
         this.URL = URL;
 
@@ -32,6 +31,4 @@ public class SteppingModel {
     public void setURL(String URL) {
         this.URL = URL;
     }
-
 }
-

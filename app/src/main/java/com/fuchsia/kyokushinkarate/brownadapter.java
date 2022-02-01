@@ -1,4 +1,4 @@
-package com.fuchsia.karatesubhasmitra;
+package com.fuchsia.kyokushinkarate;
 
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -15,14 +15,14 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-public class KumiteAdapter extends FirebaseRecyclerAdapter<KumiteModel, KumiteAdapter.myviewholder> {
+public class brownadapter extends FirebaseRecyclerAdapter <brownmodel, brownadapter.myviewholder>{
 
-    public KumiteAdapter(FirebaseRecyclerOptions<KumiteModel> options) {
+    public brownadapter(FirebaseRecyclerOptions<brownmodel> options) {
         super(options);
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull final KumiteModel model) {
+    protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull final brownmodel model) {
 
         holder.textView.setText(model.getName());
 
@@ -34,6 +34,9 @@ public class KumiteAdapter extends FirebaseRecyclerAdapter<KumiteModel, KumiteAd
                 Intent intent =new Intent(activity, VideoPlayer.class);
                 intent.putExtra("nam", model.getURL());
                 activity.startActivity(intent);
+
+                KataTechnic a = KataTechnic.getInstance();
+                a.showInterstitial();
 
             }
 
@@ -65,4 +68,3 @@ public class KumiteAdapter extends FirebaseRecyclerAdapter<KumiteModel, KumiteAd
         }
     }
 }
-

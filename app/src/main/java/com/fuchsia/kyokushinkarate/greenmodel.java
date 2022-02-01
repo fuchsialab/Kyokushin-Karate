@@ -1,15 +1,15 @@
-package com.fuchsia.karatesubhasmitra;
+package com.fuchsia.kyokushinkarate;
 
-public class Basic_warmup_model {
+public class greenmodel {
 
     String Name,URL;
 
-    Basic_warmup_model()
+    greenmodel()
     {
 
     }
 
-    public Basic_warmup_model(String Name, String URL) {
+    public greenmodel(String Name, String URL) {
         this.Name = Name;
         this.URL = URL;
 
@@ -31,5 +31,4 @@ public class Basic_warmup_model {
     public void setURL(String URL) {
         this.URL = URL;
     }
-
 }

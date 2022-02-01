@@ -1,4 +1,4 @@
-package com.fuchsia.karatesubhasmitra;
+package com.fuchsia.kyokushinkarate;
 
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -14,14 +14,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-public class Basic_warmup_Adapter extends FirebaseRecyclerAdapter<Basic_warmup_model, Basic_warmup_Adapter.myviewholder> {
 
-    public Basic_warmup_Adapter(FirebaseRecyclerOptions<Basic_warmup_model> options) {
+public class blackadapter extends FirebaseRecyclerAdapter <blackmodel, blackadapter.myviewholder>{
+
+    public blackadapter(FirebaseRecyclerOptions<blackmodel> options) {
         super(options);
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull final Basic_warmup_model model) {
+    protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull final blackmodel model) {
 
         holder.textView.setText(model.getName());
 
@@ -33,6 +34,9 @@ public class Basic_warmup_Adapter extends FirebaseRecyclerAdapter<Basic_warmup_m
                 Intent intent =new Intent(activity, VideoPlayer.class);
                 intent.putExtra("nam", model.getURL());
                 activity.startActivity(intent);
+
+                KataTechnic a = KataTechnic.getInstance();
+                a.showInterstitial();
 
             }
 
@@ -64,4 +68,3 @@ public class Basic_warmup_Adapter extends FirebaseRecyclerAdapter<Basic_warmup_m
         }
     }
 }
-

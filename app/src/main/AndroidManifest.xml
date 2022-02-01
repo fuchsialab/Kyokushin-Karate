@@ -1,22 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.fuchsia.karatesubhasmitra">
+    package="com.fuchsia.kyokushinkarate">
 
     <application
-        android:name=".App"
+        android:name="com.fuchsia.kyokushinkarate.App"
         android:allowBackup="true"
         android:icon="@drawable/icon"
         android:label="@string/app_name"
         android:roundIcon="@drawable/icon"
         android:supportsRtl="true"
-        android:theme="@style/Theme.KarateByShihanSubhasMitra">
+        android:theme="@style/Theme.kyokushinkarate">
         <activity
-            android:name=".Basic_Warmup">
-        </activity>
-        <activity android:name=".Stepping" />
-        <activity android:name=".KumiteTechnic" />
-        <activity
-            android:name=".SplashActivity"
+            android:name="com.fuchsia.kyokushinkarate.SplashActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,17 +20,24 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".VideoPlayer"
+            android:name="com.fuchsia.kyokushinkarate.VideoPlayer"
+            android:configChanges="orientation|screenSize|keyboardHidden">
+        </activity>
+        <activity
+            android:name="com.fuchsia.kyokushinkarate.MainActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".MainActivity"
+            android:name="com.fuchsia.kyokushinkarate.KataTechnic"
             android:screenOrientation="portrait" />
-        <activity
-            android:name=".LogIn"
-            android:screenOrientation="portrait" />
-        <activity
-            android:name=".KataTechnic"
-            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-8700099206862921~4848481936" />
     </application>
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
 </manifest>

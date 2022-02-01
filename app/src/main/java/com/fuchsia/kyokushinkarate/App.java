@@ -1,4 +1,4 @@
-package com.fuchsia.karatesubhasmitra;
+package com.fuchsia.kyokushinkarate;
 
 
 import android.app.Application;
@@ -22,7 +22,7 @@ public class App extends Application {
         HashMap<String, Object> defaultValue = new HashMap<>();
         defaultValue.put(UpdateHelper.KEY_UPDATE_ENABLE, false);
         defaultValue.put(UpdateHelper.KEY_UPDATE_VERSION, 1.0);
-        defaultValue.put(UpdateHelper.KEY_UPDATE_URL, "https://play.google.com/store/apps/details?id=com.fuchsia.karatesubhasmitra");
+        defaultValue.put(UpdateHelper.KEY_UPDATE_URL, "https://play.google.com/store/apps/details?id=com.fuchsia.kyokushinkarate");
 
         remoteConfig.setDefaultsAsync(defaultValue);
         remoteConfig.fetch(5)

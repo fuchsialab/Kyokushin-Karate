@@ -1,10 +1,9 @@
-package com.fuchsia.karatesubhasmitra;
+package com.fuchsia.kyokushinkarate;
 
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
@@ -16,14 +15,14 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 
-public class kataAdapter extends FirebaseRecyclerAdapter <katamodel, kataAdapter.myviewholder>{
+public class blueadapter extends FirebaseRecyclerAdapter <bluemodel, blueadapter.myviewholder>{
 
-    public kataAdapter(FirebaseRecyclerOptions<katamodel> options) {
+    public blueadapter(FirebaseRecyclerOptions<bluemodel> options) {
         super(options);
     }
 
     @Override
-    protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull final katamodel model) {
+    protected void onBindViewHolder(@NonNull myviewholder holder, int position, @NonNull final bluemodel model) {
 
         holder.textView.setText(model.getName());
 
@@ -35,6 +34,9 @@ public class kataAdapter extends FirebaseRecyclerAdapter <katamodel, kataAdapter
                 Intent intent =new Intent(activity, VideoPlayer.class);
                 intent.putExtra("nam", model.getURL());
                 activity.startActivity(intent);
+
+                KataTechnic a = KataTechnic.getInstance();
+                a.showInterstitial();
 
             }
 
