@@ -11,6 +11,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import hotchemi.android.rate.AppRate;
 import hotchemi.android.rate.OnClickButtonListener;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -59,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements UpdateHelper.OnUp
                 .check();
 
         bannerAds();
-
+// Error free
         mAuth=FirebaseAuth.getInstance();
         mDatabase= FirebaseDatabase.getInstance().getReference();
 
@@ -242,12 +243,13 @@ public class MainActivity extends AppCompatActivity implements UpdateHelper.OnUp
 
     }
 
+    @SuppressLint("MissingPermission")
     public void bannerAds(){
 
         View view= findViewById(R.id.bannerad);
         mAdView=new AdView(MainActivity.this);
         ((RelativeLayout)view).addView(mAdView);
-        mAdView.setAdSize(AdSize.BANNER);
+        mAdView.setAdSize(AdSize.SMART_BANNER);
         mAdView.setAdUnitId(getResources().getString(R.string.bannerid));
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
