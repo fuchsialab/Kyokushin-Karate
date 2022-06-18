@@ -28,7 +28,7 @@
             app:title="Kyokushin Karate"/>
 
         <ScrollView
-
+            android:layout_above="@+id/bannerad"
             android:scrollbars="none"
             android:layout_below="@+id/toolbar"
             android:layout_width="match_parent"
@@ -417,6 +417,7 @@
 
         <RelativeLayout
 
+            android:layout_marginTop="1dp"
             android:id="@+id/bannerad"
             android:layout_centerHorizontal="true"
             android:layout_alignParentBottom="true"

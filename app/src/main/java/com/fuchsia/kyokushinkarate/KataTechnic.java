@@ -3,6 +3,7 @@ package com.fuchsia.kyokushinkarate;
 
 import static com.google.firebase.database.FirebaseDatabase.getInstance;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Configuration;
 import android.graphics.Color;
@@ -237,7 +238,7 @@ public class KataTechnic extends AppCompatActivity {
     private String checkConnection() {
 
         ConnectivityManager cm = (ConnectivityManager) this.getSystemService(Context.CONNECTIVITY_SERVICE);
-        NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
+        @SuppressLint("MissingPermission") NetworkInfo activeNetwork = cm.getActiveNetworkInfo();
         if (activeNetwork != null) {
             if (activeNetwork.getType() == ConnectivityManager.TYPE_WIFI) {
 
@@ -256,12 +257,13 @@ public class KataTechnic extends AppCompatActivity {
     }
 
 
+    @SuppressLint("MissingPermission")
     public void bannerAds(){
 
         View view= findViewById(R.id.bannerad);
         mAdView=new AdView(KataTechnic.this);
         ((RelativeLayout)view).addView(mAdView);
-        mAdView.setAdSize(AdSize.BANNER);
+        mAdView.setAdSize(AdSize.SMART_BANNER);
         mAdView.setAdUnitId(getResources().getString(R.string.bannerid));
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
