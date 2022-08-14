@@ -28,18 +28,18 @@
 
             <RelativeLayout
 
-                android:background="@drawable/ripple_effect"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@drawable/ripple_effect">
 
 
                 <ImageView
-                    android:layout_marginTop="10dp"
-                    android:layout_centerHorizontal="true"
-                    android:layout_marginRight="5dp"
                     android:id="@+id/katavid"
                     android:layout_width="300dp"
                     android:layout_height="145dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="5dp"
                     android:src="@drawable/bunk" />
 
                 <TextView
